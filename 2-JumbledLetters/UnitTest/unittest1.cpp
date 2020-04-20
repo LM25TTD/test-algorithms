@@ -14,25 +14,25 @@ namespace UnitTest
 		{
 			WordCheckerUtils checker;
 
-			Assert::AreEqual(checker.isWordJumbled("you", "yuo"), true);
-			Assert::AreEqual(checker.isWordJumbled("probably", "porbalby"), true);
-			Assert::AreEqual(checker.isWordJumbled("despite", "desptie"), true);
-			Assert::AreEqual(checker.isWordJumbled("moon", "nmoo"), false);
-			Assert::AreEqual(checker.isWordJumbled("misspellings", "mpeissngslli"), false);
+			Assert::IsTrue(checker.isWordJumbled("you", "yuo"));
+			Assert::IsTrue(checker.isWordJumbled("probably", "porbalby"));
+			Assert::IsTrue(checker.isWordJumbled("despite", "desptie"));
+			Assert::IsFalse(checker.isWordJumbled("moon", "nmoo"));
+			Assert::IsFalse(checker.isWordJumbled("misspellings", "mpeissngslli"));
 		}
 
 		TEST_METHOD(TestSmallWords)
 		{
 			WordCheckerUtils checker;
 
-			Assert::AreEqual(checker.isWordJumbled("yo", "yu"), false);
-			Assert::AreEqual(checker.isWordJumbled("yo", "yo"), true);
-			Assert::AreEqual(checker.isWordJumbled("me", "mx"), false);
-			Assert::AreEqual(checker.isWordJumbled("me", "me"), true);
-			Assert::AreEqual(checker.isWordJumbled("to", "tl"), false);
-			Assert::AreEqual(checker.isWordJumbled("to", "to"), true);
-			Assert::AreEqual(checker.isWordJumbled("t", "x"), false);
-			Assert::AreEqual(checker.isWordJumbled("t", "t"), true);
+			Assert::IsFalse(checker.isWordJumbled("yo", "yu"));
+			Assert::IsTrue(checker.isWordJumbled("yo", "yo"));
+			Assert::IsFalse(checker.isWordJumbled("me", "mx"));
+			Assert::IsTrue(checker.isWordJumbled("me", "me"));
+			Assert::IsFalse(checker.isWordJumbled("to", "tl"));
+			Assert::IsTrue(checker.isWordJumbled("to", "to"));
+			Assert::IsFalse(checker.isWordJumbled("t", "x"));
+			Assert::IsTrue(checker.isWordJumbled("t", "t"));
 
 		}
 
