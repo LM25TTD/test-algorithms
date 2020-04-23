@@ -2,8 +2,8 @@
 #include <iostream>
 
 #define SAME_LEN 0
-#define ORIGINAL_GREATHER 1
-#define TO_CHECK_GREATHER 2
+#define ORIGINAL_BIGGER 1
+#define TO_CHECK_BIGGER 2
 
 using namespace std;
 
@@ -44,8 +44,8 @@ bool WordCheckerUtils::hasWordOneOrLessTypo(const char *original, const char *to
 		originalSize == toCheckSize ?
 		SAME_LEN :
 		originalSize > toCheckSize ?
-		ORIGINAL_GREATHER :
-		TO_CHECK_GREATHER;
+		ORIGINAL_BIGGER :
+		TO_CHECK_BIGGER;
 
 	int differences = 0; // Count of edits 
 
@@ -73,11 +73,11 @@ bool WordCheckerUtils::hasWordOneOrLessTypo(const char *original, const char *to
 				toCheckIndex++;
 				break;
 			// Move only over original word
-			case ORIGINAL_GREATHER:
+			case ORIGINAL_BIGGER:
 				originalIndex++;
 				break;
 			// Move only over toCheck word
-			case TO_CHECK_GREATHER:
+			case TO_CHECK_BIGGER:
 				toCheckIndex++;
 				break;
 			}
