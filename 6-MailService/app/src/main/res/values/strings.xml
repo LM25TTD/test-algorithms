@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MailService</string>
+
+    <string name="service_running">Mail service is running...</string>
+
+    <string name="service_stopped">Mail service was stopped...</string>
+
+    <string name="mail_thread_received">Mail thread received from service...</string>
+</resources>
